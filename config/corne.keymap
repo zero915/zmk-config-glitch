@@ -7,15 +7,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 
 #define BASE  0
 #define NUM   1
 #define FUNC  2
 #define EXT   3
 #define GAME  4
-//#define MOUSE 5
 
+//#define MOUSE 5
 //&mmv {
 //    time-to-max-speed-ms = <500>;
 //};
@@ -47,7 +46,7 @@
             key-positions = <28 31>;
         };
 
-        dash {
+        minus {
             bindings = <&kp MINUS>;
             key-positions = <4 7>;
         };
@@ -59,7 +58,7 @@
 
         space {
             bindings = <&kp SPACE>;
-            key-positions = <30 31>;
+            key-positions = <18 19>;
         };
 
         enter {
@@ -77,11 +76,6 @@
             key-positions = <1 2>;
         };
 
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 4>;
-        };
-
         underline {
             bindings = <&kp UNDER>;
             key-positions = <8 7>;
@@ -92,29 +86,14 @@
             key-positions = <4 5>;
         };
 
-        right_par {
-            bindings = <&kp RPAR>;
+        dash {
+            bindings = <&kp MINUS>;
             key-positions = <7 6>;
-        };
-
-        left_prc {
-            bindings = <&kp LBRC>;
-            key-positions = <2 3>;
-        };
-
-        right_prc {
-            bindings = <&kp RBRC>;
-            key-positions = <8 9>;
         };
 
         backslsh {
             bindings = <&kp BSLH>;
             key-positions = <33 34>;
-        };
-
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <9 10>;
         };
 
         undo {
@@ -238,6 +217,7 @@
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 │  WIN     │  LWR     │  SPACE   │   │  ENTER   │  RSE     │  RALT    │
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
             bindings = <
 &kp TAB    &kp Q  &kp W           &kp E        &kp R             &kp T        &kp Y    &kp U              &kp I        &kp O            &kp P          &kp BSPC
 &kp LSHFT  &kp A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &kp SEMI       &lt NUM SQT
@@ -258,6 +238,7 @@
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 |  WIN     |          |  SPACE   │   │  ENTER   │  .       |  0       |
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
             bindings = <
 &trans  &kp EXCL     &kp AT               &kp LBRC        &kp RBRC             &kp PIPE     &kp PLUS   &kp N7   &kp N8  &kp N9  &kp STAR  &kp DEL
 &trans  &kp HASH     &hm LEFT_ALT DOLLAR  &hm LCTRL LPAR  &hm LEFT_SHIFT RPAR  &kp GRAVE    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp AMPS  &kp INS
@@ -280,10 +261,10 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3    &kp F4   &email         &git_pull    &kp HOME     &kp UP         &kp END    &kp PG_UP      &trans
-&trans  &kp F5  &kp F6   &kp F7    &kp F8   &git_pull_many &git_status  &kp LEFT     &kp DOWN       &kp RIGHT  &kp PAGE_DOWN  &trans
-&trans  &kp F9  &kp F10  &kp F11   &kp F12  &kp PSCRN      &git_diff    &git_commit  &git_checkout  &git_add   &git_push      &trans
-                         &kp LGUI  &trans   &trans         &trans       &mo FUNC     &kp RALT
+&trans  &kp F1  &kp F2   &kp F3    &kp F4   &email            &git_pull    &kp HOME     &kp UP         &kp END    &kp PG_UP      &trans
+&trans  &kp F5  &kp F6   &kp F7    &kp F8   &git_pull_many    &git_status  &kp LEFT     &kp DOWN       &kp RIGHT  &kp PAGE_DOWN  &trans
+&trans  &kp F9  &kp F10  &kp F11   &kp F12  &kp PSCRN         &git_diff    &git_commit  &git_checkout  &git_add   &git_push      &trans
+                         &kp LGUI  &trans   &trans            &trans       &mo FUNC     &kp RALT
             >;
         };
 
@@ -322,31 +303,31 @@
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
 
             bindings = <
-&kp TAB    &kp Q  &kp W   &kp E  &kp R      &kp N4    &kp N1   &kp N2  &kp N3  &kp N4  &none  &none
-&kp LSHFT  &kp A  &kp S   &kp D  &kp F      &kp G     &kp H    &kp X   &none   &none   &none  &none
-&kp LCTRL  &kp Z  &kp F1  &kp C  &kp V      &kp B     &kp N    &kp M   &none   &none   &none  &to BASE
-                          &kp H  &kp SPACE  &kp SPACE &kp RET  &none   &kp T
+&kp TAB    &kp Q  &kp W   &kp E  &kp R      &kp N4       &kp N1   &kp N2  &kp N3  &kp N4  &none  &none
+&kp LSHFT  &kp A  &kp S   &kp D  &kp F      &kp G        &kp H    &kp X   &none   &none   &none  &none
+&kp LCTRL  &kp Z  &kp F1  &kp C  &kp V      &kp B        &kp N    &kp M   &none   &none   &none  &to BASE
+                          &kp H  &kp SPACE  &kp SPACE    &kp RET  &none   &kp T
             >;
         };
 
-//        mouse_layer {
-//            label = "MOUSE";
-//        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-//        //|          |          | L.Click  |  ▲       | R.Click  |  S ▲     |   |          |          |          |          |          |          |
-//        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//        //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
-//        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//        //|          |          |  S ◄     |          |  S ►     |          |   |  M.4     |  M.5     |  S ◄     |  S ▼     |  S ►     |          |
-//        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//        //                                 | L.Click  | R.Click  | M.Click  │   │ L.Click  | R.Click  | M.Click  |
-//        //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
-//            bindings = <
-//&none  &none  &mkp LCLK        &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_UP    &none      &none     &none            &none             &none             &none
-//&none  &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN  &none      &none     &none            &mwh SCROLL_UP    &none             &none
-//&none  &none  &mwh SCROLL_LEFT &none           &mwh SCROLL_RIGHT &none             &mkp MB4   &mkp MB5  &mwh SCROLL_LEFT &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT &none
-//                               &mkp LCLK       &mkp RCLK         &mkp MCLK         &mkp LCLK  &mkp RCLK &mkp MCLK
-//            >;
-//        };
+        //        mouse_layer {
+        //            label = "MOUSE";
+        //        //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+        //        //|          |          | L.Click  |  ▲       | R.Click  |  S ▲     |   |          |          |          |          |          |          |
+        //        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //        //|          |          |  ◄       |  ▼       |  ►       |  S ▼     |   |          |          |          |  S ▲     |          |          |
+        //        //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+        //        //|          |          |  S ◄     |          |  S ►     |          |   |  M.4     |  M.5     |  S ◄     |  S ▼     |  S ►     |          |
+        //        //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+        //        //                                 | L.Click  | R.Click  | M.Click  │   │ L.Click  | R.Click  | M.Click  |
+        //        //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+        //            bindings = <
+        //&none  &none  &mkp LCLK        &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_UP    &none      &none     &none            &none             &none             &none
+        //&none  &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN  &none      &none     &none            &mwh SCROLL_UP    &none             &none
+        //&none  &none  &mwh SCROLL_LEFT &none           &mwh SCROLL_RIGHT &none             &mkp MB4   &mkp MB5  &mwh SCROLL_LEFT &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT &none
+        //                               &mkp LCLK       &mkp RCLK         &mkp MCLK         &mkp LCLK  &mkp RCLK &mkp MCLK
+        //            >;
+        //        };
     };
 
     conditional_layers {
