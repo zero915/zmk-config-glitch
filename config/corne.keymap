@@ -68,7 +68,7 @@
 
         caps {
             bindings = <&kp CAPS>;
-            key-positions = <5 6>;
+            key-positions = <12 13>;
         };
 
         escape {
@@ -134,6 +134,11 @@
         save {
             bindings = <&kp LC(S)>;
             key-positions = <14 15>;
+        };
+
+        all_caps {
+            bindings = <&kp CAPS>;
+            key-positions = <16 19>;
         };
     };
 
