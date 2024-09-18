@@ -41,16 +41,6 @@
     combos {
         compatible = "zmk,combos";
 
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <28 31>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <4 7>;
-        };
-
         Clear_BLE_Profile {
             bindings = <&bt BT_CLR>;
             key-positions = <0 38 5>;
@@ -64,6 +54,11 @@
         enter {
             bindings = <&kp ENTER>;
             key-positions = <17 16>;
+        };
+
+        return {
+            bindings = <&kp RET>;
+            key-positions = <21 22>;
         };
 
         caps {
@@ -81,11 +76,6 @@
             key-positions = <8 7>;
         };
 
-        reload {
-            bindings = <&kp RC(R)>;
-            key-positions = <4 5>;
-        };
-
         dash {
             bindings = <&kp MINUS>;
             key-positions = <7 6>;
@@ -94,6 +84,11 @@
         backslsh {
             bindings = <&kp BSLH>;
             key-positions = <33 34>;
+        };
+
+        reload {
+            bindings = <&kp RC(R)>;
+            key-positions = <4 5>;
         };
 
         undo {
@@ -121,11 +116,6 @@
             key-positions = <24 25>;
         };
 
-        return {
-            bindings = <&kp RET>;
-            key-positions = <21 22>;
-        };
-
         select_all {
             bindings = <&kp LC(A)>;
             key-positions = <13 14>;
@@ -133,12 +123,22 @@
 
         save {
             bindings = <&kp LC(S)>;
-            key-positions = <14 15>;
+            key-positions = <14 15>;df
         };
 
         all_caps {
             bindings = <&kp CAPS>;
             key-positions = <16 19>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <28 31>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <4 7>;
         };
     };
 
