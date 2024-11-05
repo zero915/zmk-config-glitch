@@ -135,11 +135,6 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <9 10>;
         };
-
-        space_ {
-            bindings = <&kp SPACE>;
-            key-positions = <18 19>;
-        };
     };
 
     macros {
