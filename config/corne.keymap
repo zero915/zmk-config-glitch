@@ -131,16 +131,6 @@
             key-positions = <16 19>;
         };
 
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <28 31>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <4 7>;
-        };
-
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <9 10>;
@@ -148,7 +138,7 @@
 
         space_ {
             bindings = <&kp SPACE>;
-            key-positions = <30 31>;
+            key-positions = <18 19>;
         };
     };
 
