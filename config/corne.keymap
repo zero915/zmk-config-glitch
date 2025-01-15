@@ -200,6 +200,45 @@
             bindings = <&kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
             label = "GIT_COMMIT";
         };
+
+        start_dealsuite: start_dealsuite {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LC(R)          // Press CTRL + R
+                &kp C &kp E &kp L &kp E  // Type 'cele'
+                &macro_wait_time 1000
+                &kp RET            // Press Enter
+                &kp N1             // Type '1'
+                &kp RET            // Press Enter
+
+                // New Terminal tab
+                &macro_wait_time 2000
+                &kp LC(LS(N5))
+                &kp LC(R)          // Press CTRL + R
+                &macro_wait_time 50
+                &kp R &kp U &kp N &kp SPACE &kp D  // Type 'run d'
+                &kp RET            // Press Enter
+
+                // New Terminal tab
+                &macro_wait_time 2000
+                &kp LC(LS(N5))
+                &kp LC(R)          // Press CTRL + R
+                &macro_wait_time 50
+                &kp A &kp P &kp P &kp DOT &kp P  // Type 'app.p'
+                &kp RET            // Press Enter
+
+                // New Terminal tab
+                &macro_wait_time 2000
+                &kp LC(LS(N5))
+                &kp LC(R)          // Press CTRL + R
+                &macro_wait_time 50
+                &kp R &kp U &kp N &kp S &kp E // Type 'runse'
+                &kp RET            // Press Enter
+            >;
+            label = "START_DEALSUITE";
+        };
+
     };
 
     keymap {
@@ -255,7 +294,7 @@
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
             //|          |  F5      |  F6      |  F7      |  F8      | g.pull_m |   | g.status |   ◄      |  ▼       |  ►       |  PG_DN   |          |
             //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-            //|          |  F9      |  F10     |  F11     |  F12     | PSCRN    |   | g.diff   | g.commit | g.chkout |  g.add   |  g.push  |          |
+            //|          |  F9      |  F10     |  F11     |  F12     | dealsuit |   | g.diff   | g.commit | g.chkout |  g.add   |  g.push  |          |
             //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                 |  WIN     |          |          |   |          |  RSE     |  RALT    |
             //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
@@ -263,7 +302,7 @@
             bindings = <
 &trans  &kp F1  &kp F2   &kp F3    &kp F4   &email            &git_pull    &kp HOME     &kp UP         &kp END    &kp PG_UP      &trans
 &trans  &kp F5  &kp F6   &kp F7    &kp F8   &git_pull_many    &git_status  &kp LEFT     &kp DOWN       &kp RIGHT  &kp PAGE_DOWN  &trans
-&trans  &kp F9  &kp F10  &kp F11   &kp F12  &kp PSCRN         &git_diff    &git_commit  &git_checkout  &git_add   &git_push      &trans
+&trans  &kp F9  &kp F10  &kp F11   &kp F12  &start_dealsuite  &git_diff    &git_commit  &git_checkout  &git_add   &git_push      &trans
                          &kp LGUI  &trans   &trans            &trans       &mo FUNC     &kp RALT
             >;
         };
